@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>د. مينا ديمترى إبراهيم</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        .card {
+            background: #161616;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.9);
+            width: 100%;
+            max-width: 380px;
+            border: 1px solid rgba(229, 193, 88, 0.35);
+            text-align: center;
+        }
+        
+        /* إطار الصورة الشخصية */
+        .profile-img-container {
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            border: 2px solid #E5C158;
+            overflow: hidden;
+            background: #222222;
+            box-shadow: 0 4px 15px rgba(229, 193, 88, 0.2);
+        }
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 { font-size: 20px; margin-bottom: 4px; color: #E5C158; }
+        .name-ar { font-size: 18px; color: #F3F4F6; margin-bottom: 12px; font-weight: bold; }
+        .subtitle { font-size: 13px; color: #9CA3AF; font-weight: bold; }
+        .subtitle-ar { font-size: 13px; color: #9CA3AF; margin-bottom: 20px; }
+        .section-title {
+            font-size: 13px;
+            color: #E5C158;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(229, 193, 88, 0.3);
+            padding-bottom: 6px;
+        }
+        .clinic-box {
+            background: #222222;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 15px;
+            text-align: right;
+            border-right: 4px solid #E5C158;
+        }
+        .clinic-title { font-size: 15px; color: #E5C158; font-weight: bold; margin-bottom: 6px; }
+        .clinic-details { font-size: 12px; color: #D1D5DB; line-height: 1.6; margin-bottom: 12px; }
+        
+        .phone-row {
+            background: #181818;
+            padding: 8px 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #333333;
+        }
+        .phone-num {
+            font-size: 13px;
+            font-weight: bold;
+            color: #FFFFFF;
+            direction: ltr;
+        }
+        .action-btns {
+            display: flex;
+            gap: 6px;
+        }
+        .btn-act {
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #ffffff;
+            transition: 0.2s;
+        }
+        .btn-call { 
+            background: #1E3A8A; 
+            border: 1px solid rgba(59, 130, 246, 0.4); 
+        }
+        .btn-call:hover { background: #1D4ED8; }
+        
+        .btn-wa { 
+            background: #065F46; 
+            border: 1px solid rgba(16, 185, 129, 0.4); 
+        }
+        .btn-wa:hover { background: #047857; }
+        
+        .btn-map {
+            background: #374151;
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid rgba(229, 193, 88, 0.3);
+            margin-top: 6px;
+        }
+        
+        .btn-main-wa {
+            background: #25D366;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+
+
+
+        .icon-gold {
+            fill: #D4AF37;
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- عنصر الصورة الشخصية -->
+        <div class="profile-img-container">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABECAIAAAC+mqSfAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAd7klEQVRo3mV7WYyk13XeWe6/1F9br9Pd092zkBwOKYpDiVodBFJswTYcxXEiC3ZiA0GQ2K9JXuP4PQn8FiMPQQI4gJWHwEEUxFAk2aCthRRFmaIkLpohZ+HM9PReS9f2r/eek4f7V3Uz6eEMhjV/d517z/ad73yFzz33LAABqCqoqqoCABEhIjExsf87ACIBAiIhAQECoRIRESECIiICAIgKKCgAIhASEyERIRKAIgCg/4MIaf49TkFERMS/df2FAACqIKIi4pw6J845ERFxIrp42DDT/AC4OAAAIM4NQyQi/wosXkJF9PYDISFh/cYCigqizjqHygESIrO/Am8VItYX5F8kACcoQuLtBQAEBFBAUEVQAFAVkfk7IyEKeIsRDRN7y/zDoioi52dAnHtgYfriVPV/7B9ALPKi1x/M0sw5h4BOhAhNEHRarVazsbLc9RcBiOS/HxEUFBQRFcWpCmJ9g4gMCKCCgrU3FIAWHvJ3jYjGGAMICKigqoACOP8pdVj8f6b7u2N/ACYROTs7G51N0iyrqkpVEJHZAAhhkKVpNkuPAKIw3NxcX1nuJo0Gzc8MAP7CkEhVvWHndwcgCKAgpIb5ojH+lhGRd3a2faD7YAZQ7+qL17/wOM5vjgiZkBhHo/Gjx0/6/TMRsbYigiQOmQlBQ2MAEQnLqvR3NhyNe71hUZWtZiMIQ67fcRHzoBfehZmYcH7357d4wTZmZt7d2Z7bR3PvQJ1u8zAnIqT670xIxESoKkfHJyfHPREFVUKMItNpxogQMgmgf6ay1l+3CYyKOnGzWXZ80mskcbvZBETQeWb78EZEQiYyxAub/S+Y51F9AEYmNvMyAt5zCt6VdYpcSBw69wZAWZWPHj+uyipJYkZCkLKqOkkcRWFaVBFTNU2ZiZlFwRA5Z0UVAZhJAa219+8/UtGtjXUiEq09sIhxb7aC+HtEdOgAQUEVgR0KogICIRoiOHcNIKiAqk+Dj0TRInQQnbP7+we2tHEUrXZatipLp0RkFbWoQMEqAKIqlFUZEFbOGja2LI1hJGZC69BZ++jxvqpe3txg4kUgqdZVyF+qAAI4BPZ3KgqAgkhCClAfgBbBhah1KOp54C1CCOsntd/vqWojDjdWuo2Qg05zNCvU2dKKQQDU0BCDywubJI2iqlqhKQUiDqMwADJFWapqXlbWuYeP9pa63Xa76SsNAHr3z0/jI4fB100AAGcFFRVVAICQzCLwfPISoQKCKAD+v8WUEAHzPJ1MpszUSaLIYLvVTOIYERFZbMWkcWAQALEzTXNxjhEqW+alVVUHiMQxRwxFkecKNBqdHZ0cL3Wfrv2P6IMXVH2NIlVFdYiCUHch55wTH/FEaBblbB59hKhEdUDWvcbfPSARTibTMAi21zqdJN5e7X7q5tXN9eX+OBMyJ/3hdDLptpLAmID5uDeIUJabsa3yJ/3RySgdTGaVUwVc7TSTJDoaTooCHj/ee/ra1TgKEXxj8KGiUF+qKioiCCGiIDpfKFW8sXMPqPfgImyQYJ4+81f8bxgOh9vryy9srdx6ZufTz19fWurGjSYgoAmzyo6n6aTfjwznpd1pBw2DUWAmk3GDsWloqRFmlTgFjBoWe0fDqTGBKvYHg93tywjIRPNOKnPnk4ggoTdZVYHBow5fmgzReZMHAhKAcwwxN9//LKJ0No2j6Jc/ceOLz+9srC0vLbXjdpfCpooTsTFCkEQt7DJglWdt6hCTOLFlETG2o1CBIusKq43llZmjO48OjTHi3GlvcG13m4kY0AFYIFD0tcT7X0RIEQCZfaEyJLWTDCEqAgEqgCoo+pJ2ntpzCEREOJ1Nm43oE09t7m5darbaUZJwGKMxqkZKVK1Aodnq2jLPs9SEIQBYV1lrfaNAAEYIDLeareVSkkbUH46N4VmaEUDAhICkAHWfvdCpFz1KAFgRiYS8D8wc66ACANaYdN5va+gEcww1Ho9vXtttJY3AoAkNMAMSIHkQKE5VEUwoZZXnJYIQkatKn1uqKq7yENaJlFXFzCbgIAjyPC+KPIm7dalx4BAQfVtQQbAoDsFa36MYSYkUgBDBQN2mkHwO1SBpUTnJ90gics5VlW0nsSgSB8QGQUGsFFIVeWVdMRuZKJaKqiJXcWhClUpVkSgIAqbCMIuAAk7TWVbkzSRGw9NpBqpZXlxaNQoqqohIKqBYYxtCcmgBwAgAgROdXzggGg8S2Jvrs/liD/ZonggRq7I0zA2mvCwVEXxntKU4ESdlOsvTLFLydYTYICoRGWZDFBkKmELDeV45cCQCiO1mE6lwVsqyGk1mHDAAiFNBUSVfSRFAlABc3ehMndbg2xiAQUQmNHW7mjdEf8I6joDIDyiwtrJclLk4p9aKs2wMsiFCQy6oqjAIVcTmOQVBq9kEVHCWQYs8j+JGGFXGCpFIUQWEq0vLp4NxaKWVJGOZTtOUiAlQQIRQRf1UBKok6nEQAiCRJfWDjQc3xgN6Ymb0R4LF8AXn3QUJCQDyomzEcRxFiKAqSgGaGMmQSKCmsiBO1FkTxBQnKq5I06JMHQTTCnNBNUEYaaggVbl+6dJB6zQrCmOMMXw2HoMqG0ZCUpI6q1RBgYTBT4jMqiRirYio72veA8SEXOO0c2j0EWjOHEVhYAhVOrERDiuK0rQUAuCAAaV0QEEQR2ArReWkM+2dDs5mp+PyaDjZOx06VVCwlkrlAKkRh5+89eIP3/pJbzgC1SIr/O2IiqjO24GoIigqqR8anVMkQRJxvmmpISIk4hri1xAcEAFEFFWRCJiICFPrVpaXr15aDpgOB5NHD0f7vdHgbHzSH6C4Z3Y2X7yydfPpqwxQZPloNLn74MN39k7ee/TksD867A/DIIgDU5aFArz8wnNhZ3JpY+PW88//xXdfZTaNKGZCcZUJQxUVVKkRfg3LxM9bJCgEIsLiG7Ix5HE3EQGREtQTsAIRaD2A+4kHYTabvXjt8riEb//4g7PMpXlBROk0C1DvPTnOi1ylYmdnaTbOi/vH/fcOhg+PztLZDAW0qqZF4VQrkR++feev/+bt6XR2/crOzvblorIf3r/71ve+e217+6mXbpkwcILoBGl+zwoEogJCRCKsVLMAjgwzIwESMCIv5u96RJ6DUaZuFHTMSqXx13/ypNtJMmPa6/HlZAXLcv/euNcbDE7K9z5w3/rhOzev7x4dHT457kGUdFfaK+1oO8GN5e5Kp5ll2eOT/oPjwbQqblzZvv1gLw5MCDKtCpvOiga//tobjSR+6qWXnKhFED9QKviRqQ4kUVEREeecgBhEj3vmkJ/qyaA+yJw5uRbJwWx2OjgLm25pczdLs49t7UiWHY9TW2Qhyvpy0knit48mb/zsvaWIRrMssAJlBhFFrdbAmrd+es+VWcDUbUSrq51sNttYXf7S3/6sdfrGOz9/amtdxIaM2aCPTIaACD3VIgqkKnPCQkWd1JMvMhhfZQiBAJHqQoR1W6gnSSQsq/ypxLxWTp69vtV/cmgU3tzfPxhno0J745zz8fbq0rbqchI9f+uZ3/vKr3ztz7/9339we5DOIImv7l7hOAmZwlazfzY+naRXgpjEJkmL2TSTaKmVaBFYCSSO08mIVYGQyXj+x3lShdg3WUFAQB/fpGTqoyyGTwBvOjEz+yMgIq0tr2wZc32vd3m1s9aKHp4M3n9y9vGnr7c6q4cnPZeNDcHu5Y339k+/+qtfDG35se01lSoJg5tXtm5srUdBsKq7g+HZamQmymk6Xe4kU0UGSBqNbqt99+7tMIrWNjZULTH5cQwJRRFVLYAvqVKzVgqAhCCABj765S+dmdmw59X86eIwaoV0da07nmXPbq6WVtaarSvbmxQmCdm9RyMnsrO+9MHx6Nlru9P+aZGXTcK4ESXsZtOz1Nl0OimLPDT83Eo3aqyPcnfvZEwIYRCsLC+dDibGTC5dT9Z3doMwUFUV8FSXCHjEqYpzQgjqGR7QXJz7fT74rGUiZl4M8n0HN0J67sbTr7z5k889e+UpoDzLyZZ5lnca0adfeuHK5rLDYOd4xgCEzGiurXfunIy319eurraSRgNx2zkbR3GWF4/7QxtEy2mpKrPZtJnEG5dW+71+UVaXn3oqYAZVIXWqzoKqw/msArXdUNMAqAYukIbeejbMTJ5TMEye5OiXUjUal1vNonLTolput5a3txicrQoyptFZAo7+8//+7u986W+ptaKy3O3srK+k1n3v9qN/8qXP72xdCo0Bpsk0OxodvrM/nBbVjd1NFSnLYmWpu7rUHfT6YRSsbmz4A1jPNJKSkKLWcHkx6c6PY/Qjky/6is/ETMYYDk3dAgjpIJedLnz55adfefvh7ubmrefX21FAMZ7NsvvvPrnz4PEXXnx6dalFSScotdlI1lZW9k56XcPf+pt3vv9egiJFXkpVGdL1lZXdzXUwpihzMqbZbE+zrJk0GmGYNBMkAgAjoqBIyIwKFIBaAVV1KigoqqriRMwFNrcGzuxZMUOh4YApMHVBGhVyM4477eT3v/wLw0l1+84HaV4iBSHDSiv65ZuXb1zbBUWKW8oFcRDHzd2NjdVuqz8Y/uInnttaW1dE66rj/uBhr5+bRtBszWaToLLO2jCg5565puJMEHjCFBQMgjK4GowpOaxUyVOooE5URAzCPLrgnI8m4sCQYTI+GYiIuAAs85yMQcCttbXr129QnLg8Hx3uvfnGD6+88GLcaFl1CqayVV6UZVU2m60sK+/tHZVF+YsvfXxn45KtcnWV2spBELNRRRGnoNs7V8b93q2XXjTGgIKqCjoUBAcE6JDQCSgIM4nMOSIRAaPged3z/KjHY98AmNhTkEwOcZSXZVFkWR6HLXCVm5z19x7++Cc/62XFTcPv3bnTarWSwdlgcPbo+OTdew9ORpPRZFZVttNs/PzJE2IKA55kxXiapuRKIBGncVyV5c7u7oezaRhF/gAA6hyBs+jLunMKyEoiDudEogqoqFERJfQkiirUZwEQTxNBTUH7XUXciGnCRVUW+dSWeZHld+7ef/fRk1/6O18Q1f3h+N03372+s5lOxj947/2fPtw/S/PYmOUktgizyv18/2BzqTuezUaz2djOWgBhGLSwnWXZ/v6T6888c+3GM4Ex6vEDCSJaRH/3XLcwmFNgngRTs1iM6PkGAs55CvzIqiOrKuIgK4oQp2KlN5z9/PF+e3Nzat2wdzYFilaWX/vg8cnpyVH/LK1csxG3GjETji3c648TxrM068bBLM8yIZ2Mut2utbYs8m63u7Z1aXV9VetCLwjkFABB0CkoqzhSwIVJdc7yc88+7SPEMBlDhtkYExgTGv/yvCwRElFmBbMJq7Pipmm1fzK4vX+UrKw/Gkyp0QpaHUIU4g8+fLS+tt6IwrXlpTAMwyhOKzdK88rprHLrnYRQZ5UoIqiGQUhEv/ilL+xe2VpscBAIzuEBiqqKOBFx6pdOogqqoGrm/qgvmpAYyZCPGpxjUyAgIqoYIWgkVCiigjvu9Uy7O7EgJpylWVGURZbFgFc3N69d3jo+OT4ZDnPQSZqlaTqcZpNG4/Lacqmw1m2fTntZmgbMtqzEuTgMDRsAR6JSM4vefFIVQkQgg2gZWcgwOcfCagBM3R1QEcETuMxojGfo65Ee6/0AMjM2Wi4rBJXQdTqJYdo/Pp5NJt2nrkZxvN5oQsLPvvxS7/R4mKWUZZPxeFpUk7x0zoVJmKbpcrcNReqcqAgCOKmcs1EUEhEDKNa7ujmqd+hwQQ0SESMaZmd8pQJ+7rkbgTGB4cBwEJjAmCA0YWBCw4brJQj5zsBETGwCmJwBqEHotJt3D06Pjg/bIY8G43hlaX2zu3HtMjejwfSsud5tL3WLWTpOCwK4urG02mlura+89NTO/SeHp6MpACRJEhgzmuWPjk9ufexZj+apHslRAdTPln58UXU1bwoLxtP4Rst0voup5+PFHm6R9b7ZEVcmwiovDUeR2V5pz2bLv/zZl3fbnbOTWaexbLNwVtpLQccV1bKCba9qKTnYtZVOs9kcZ8UszfrjWVaWSRwRYlEUl3af+m9f//bnXr71zLVdceBEQMiRoNYRPGf2kQmFSVSVNUSoHNaAx9RnQL9EWkDr87VtXbgQEaCzLApFpbPSoepqu/X89lqjFa5uNKsqb7WajUp3O6tLbEajwdSVjU5DCTuNRlaUudWfPzx40hs6V1P+RZ5vX7kWhuF/+trXJ7OUFltRVVSP2urNHSIyUt2aCJk4YKJg0W7rSkP1ME3nK2dcENSISBg02xPlvCgGkykxhY1kVpRBEExAe5Lef/z+/dPHt48e/uz0ySG5x1n6uD9qx5F1evnyDgTRncf7WWEDpoBNkefGBM2lFUC8+2Dv3/7xf52m+YVtnc7XHkQ1e0KGsF5OIxAif/KlF0LvBGOMMVFgwsAE88Ul1VnAzMSG2RATExJH8fj4gBHiKFrd2i2txKjtkF979+47eycPBuNe6Q6neW8yO+0PlmITN5IwDKjZyawc7O83IiOi3VZL1K1u7axs7Xz7L18h5NEkvfdwb6nb6rabRCSibr7Dv7ADm+/jVQGBP/XSC4aIDRtmU+cxGd8BuB5s/L/yojMwR3E8SWc2nSqbg1HGbEaTabvZvLG7udRK/M8vZpMI3LXV9tpSh8NoYuX4bDLNiuGg32kEABBGIRLu3nxxnGavv/5GHMdE9Gjv4Duvv/XKq2840e2tS8xYCwsuBLWo1HgPgT956wVm5PMxwKcEM7Opv5iJOPAsJ7NBRlKV3NHh3l7EsDfMwISoeuXypShptpJkKUlCsTev7rSSxnK33V1ezSnY6w1H0+xsNLJFBgDddoIIUWd595mbP3rzzUeP9xtx7MQVRYGIIvDGj9959Uc/RcLtzXXDrDXA8LOaLyyoCvzyrRcY0Z+BiA2fX7/xkTMfzphIRE77w9fefOd/fPM73/jrN8ZpsdlpKAcaNp66sjvJqrIoEZGiRKxttZqD0TgV0iB+sH84K+w0zWfTCYptRGEcBhjGV579eFaUr776epbnYRiWZVlWpbVOnFhrp9P03TsP3nz7NiBurK0EhkVV1A/HogJOxEC9laqHTd+o5/+nqiCgKNIfTG7fe/jmO3cePTkuKxcGoTFBFq1cuvkJfHC7X5b3jnrb3ZYaPhmlSbNVIaezokIzymeDk+EkKxQgzzNX5o04SOKgcNBZ2bSKD+7dH5yNEKmytrLWDyql+uqDVVXt7R/96Z9941vfef3zL7/4mVvPr6x05vswFVFzQT0BF44h4lxqJT2bHJ723r5998Gjg6K0RAYR4igOTKAgbPhLX/ndP/2jP+yUZ47XxqUzUePh6VE0HNuyDKOgInMymh73h/3RyFlrs1kcmkYYlg7bq6th0hqOzp4cHDonxrCtKvXrg1reATWpg6iqvd7wW3/1g+++/tb1q9uf/PizN67tMBnfT+v09qoKpzpL8w8f9+8+3Ds47k9mqXViOCAiY0JEMoaZ2XspMKazvPaxT/3C2z981ZzuPTTto/HsbDyuBLQq0qworRwPhmmW2aqcjoYBcyM0lWh3aa29vIbMeVacnvb9dtI33PlyGkU+smn3Ao80ze588OD+w/12u/X01cvPPXPV1KmN4MSNhpMPH+9/uHcwGs88K8fMYRARG38NHqs6cVpT4aRKtz7/xQfvvTNNs2h6OhnhWVqNZ5m1dpZlAfPZoO+KnEBX2i1rbW5lfWt79dKlRrMFQONJfzqZegLRsyUXNit6UW3isTOAOFEtiqG1Px1Pf/ruB0bFpUV18PD0ydFJfzCqKkeEzAGzoQWYAwQAJjZsRFScqGqAIagg0ubVZ299+nNv/c0bEwG2WctltppmRRGXVVG5bmicSUQkTVMNoqvXr3aWlpJmi5jzrHz86HGNoHW+DoVziZXqQhRWq74AyD8qzlWiAGB+/M6dw+PTPC/8Q8YEvvxckNjUQxobBgQPrQhZRcUpIQHyZ371K8PDvb39g4G4lAMThIEqB3GsaJ3NZrPRZLZ25frG5ctxoxlFcRBGRVH2Toa9Xg8R9aPT7MUFBTFjDQMIzrkhBUVRRUDz4aMngDi/b2+6XxgsdsSACMzso8hjGKxX9yAAoWFM2l/4rd/7wf/8E/PoodqiKjNxZJ2CujSdtlbWPv1Lf5eDwBijCsxGREaj0aPHD8+FKbU2A2pecJ5mWNP9c1Ee1mIE/0+iYoIgmlNCuJD4zcUrftMGImICA4Cq4r+diFR1c3PTpx0Td9e3PvPrv0t//jUCqfI0IhQnaVl99u9/9eatT43GE0QC1fFknM7yyWRcFtXBwQEz61wQV2t8ajaBQMS/Ec41eQjniiYiVO8BY4K5/bXECc9lW7pQp1nrDMN5lUAipmvXrouCiiITIa9ubn/+N/9Z9M0/i5mGk5lpdj/36/94eWN3PJmurFlr7XQySbPcycyE0YOHD524egtNKCII6MR5XtlX9VrDNN9Ua60DglqZgoqKhpm9OwAJ52bPx4A6LInIVpU/zoJEXVpa2r687VdRxICoeVH+r//zzWdvvPzlX/vtMAxNGJeVzPKcg6gqq9lsludF0moXpW0bunfvA/JreR9C9V5Pmdm7GgFFRFVozkDX6s2FNEIJUM08yNEXKrigmTqXnwEaE3jNgqp4gd7O9vb25W1vBKje//DBH/+H/3h0cPS977zebDUms9kf/MG/3t3eiTUmJBBlokajsdRdyvPy/v0PxqOzWgpRaxjNXFlJKq4oClVttTrGhN68c3ZXF8KzWuTlmXif5guhYg2aPJHEbOq1q4ICMLGoXLl6dWNjA5kA4O69u//yX/yr/umgkTSKvDg96bvS/vt/90cPHz8O6nRHNiZJGs1ms9lq/vD1HyASIi8mEAD0fEhZlbM0jaJGt7schuF8PllQPQuOx08pQAqKxDQfRHVeqzwO8tVJvbf0nCgyhnd2drrdLhLmefa1P/kvk7Ph8GzoVLvL3UbSTLP8g/ff//1//vvv330fVRSBjQmjuJEkRZ7du/v+gsP0Q8eCQQmCoN1ux3FjLlLyuiE9r4rzJ70giBDI6yR0Lhi6eFhEX4ug1rLM6Y5GI9rc2IzjGEVf+ctvTYZnn/70Z5HAMBdWZml6eHBwenI8Ho3+8N/8wdHxUWBMEASecfrRj944Xx/SPA2IENGwacQJIlpb1fqkeUjUiboQ1MHcuLr81MafY+2FUEgXZXeOUpxoq5WsrV8Kg2Aw6J8enXz1d/7pV3/rHznROG5UeXF0cDAcDsIgaoT04sdfPDzq2aryd+xEXnv1ewsmypM1HxUEU2AiRMzzbD6IAaj6teNCpA0XNzTeOAUB0Hq3DHOx9kLHNT8fkRFxa6trS90lRhoOh7/5W7+jqsTUbDadyNHhYb/fa8QNw/rlX/+NX/21v7fU7TKSIjrnfvqzn4yGZ3iBDaeLejekhTyAmNJs1kxaqnJeU+rJDEXrYDdz0xcmXth+AIoA1BKoesQmpMrmO9s7zVYTEDa3tgIOnHPEFIbhoNebTSciAigfe/GlL//GP+y2O0mj0em0K+vG08lf/MW3PSu7WGwRUS0hq1UytWS1KitxrmYUFpAT53v7+Rf5+DinTxAQaC7HAZgzG3V41V6G7Z3dOI6ZKQojjywefPiAmff3n6yur1lrjeF/8JXfXuouEWKr2SSkssg/uHP7Zz9+S+fd0OMRVfAbaiCWGpCCqs6mk2azVZuH50NCPXFBbbZRXMQ+ItZxo3VQzfmgC+cThTgKd69eDYMAkdQXb8Cf3779/vt3trd3iQ0RdzrLOzvbtqqWOh0TBM7Zs+HZX73ySlVVviIsasUisEUUiFREFabTcRTFxAZgbuAcAmktrvd6CCU8V4x7h5x//ODccZ7QUyVk52yn3d7euWKCYKFnqSr7ozd/jADMoS0tIuZFmc6miJA0E1Uti2IyGb/66qt+/3AOE2psJrU6CRQAy6ooiqLZbC+klKK1zlK9mOV8skfyn7moH61V0/WHMGoacoFf612Ju7RxaXV1NQhNDZVEvv/a9z+892D90lYQhIAYhKGK9nu9MAyZWFXH48nbb7/d6/f90F1/xsNXl8XGResYn07GSdIKTOA/+LAg52qOXesPe3h/0KKw1nrnxa5pXq3qtUjdAMA5u729mzSbxhg/gORF/o1vfts62djYYiY2BpFE9fDoMDCBAlhbTafT737/u+Lcuaa51qvP32SecHmeiWqSNBXP7fAziXPO+QXB/JMmivB/AdH2xIu8735HAAAAAElFTkSuQmCC" alt="د. مينا ديمترى" class="profile-img">
+        </div>
+
+        <h1>Dr. Mena Dimitry Ibrahim</h1>
+        <div class="name-ar">د. مينا ديمترى ابراهيم</div>
+        
+        <div class="subtitle">Consultant Orthopedic Surgeon</div>
+        <div class="subtitle-ar">استشاري جراحة العظام</div>
+
+        <div class="section-title">العنوان والتليفون (Address & Tel)</div>
+        
+        <!-- عيادة المنيا -->
+        <div class="clinic-box">
+            <div class="clinic-title">عيادة المنيا</div>
+            <div class="clinic-details">
+                ٣١ شارع الجيش ميدان الساعة برج الحرية الدور السابع بجوار راية امام المبرة
+            </div>
+            
+            <div class="phone-row">
+                <span class="phone-num">01224594614</span>
+                <div class="action-btns">
+                    <a href="tel:01224594614" class="btn-act btn-call">
+                        <svg class="icon-gold" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        اتصال
+                    </a>
+                    <a href="https://wa.me/201224594614" target="_blank" class="btn-act btn-wa">💬 واتساب</a>
+                </div>
+            </div>
+
+            <div class="phone-row">
+                <span class="phone-num">01280140549</span>
+                <div class="action-btns">
+                    <a href="tel:01280140549" class="btn-act btn-call">
+                        <svg class="icon-gold" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        اتصال
+                    </a>
+                    <a href="https://wa.me/201280140549" target="_blank" class="btn-act btn-wa">💬 واتساب</a>
+                </div>
+            </div>
+
+            <a href="https://maps.google.com/?q=3QW5+8JP+First+Al+Minya" target="_blank" class="btn-map">📍 موقع عيادة المنيا على الخريطة</a>
+        </div>
+
+        <!-- عيادة ابوقرقاص -->
+        <div class="clinic-box">
+            <div class="clinic-title">عيادة ابوقرقاص</div>
+            <div class="clinic-details">
+                ١٥ شارع عقبة بن نافع خلف هندسة الكهرباء عند عيادة الدكتور ايهاب وديع
+            </div>
+            
+            <div class="phone-row">
+                <span class="phone-num">01282553773</span>
+                <div class="action-btns">
+                    <a href="tel:01282553773" class="btn-act btn-call">
+                        <svg class="icon-gold" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        اتصال
+                    </a>
+                    <a href="https://wa.me/201282553773" target="_blank" class="btn-act btn-wa">💬 واتساب</a>
+                </div>
+            </div>
+
+            <a href="https://maps.google.com/?q=WRQC+CRG+Abu+Qirqas" target="_blank" class="btn-map">📍 موقع عيادة أبوقرقاص على الخريطة</a>
+        </div>
+
+        <!-- زر الواتساب الخاص المباشر -->
+        <a href="https://wa.me/201220990148" target="_blank" class="btn-main-wa">
+            <svg style="width:18px; height:18px; fill:currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.155 4.22 4.288-1.123z"/></svg>
+            WhatsApp
+        </a>
+
+
+    </div>
+
+</body>
+</html>
